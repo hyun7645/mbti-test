@@ -51,22 +51,23 @@ function renderQuestions() {
             <button type="button" class="btn answer-btn btn-no" data-index="${index}" data-value="1">아니오</button>
         `;
         questionsDiv.appendChild(div);
-    });
 
-    // 버튼 클릭 이벤트 추가
-    document.querySelectorAll(".answer-btn").forEach(button => {
-        button.addEventListener("click", function() {
-            const index = this.getAttribute("data-index");
-            const value = this.getAttribute("data-value");
-            const input = document.getElementById(`q${index}`);
-            const siblingButtons = this.parentElement.querySelectorAll(".answer-btn");
+        // 각 질문의 버튼에 개별 이벤트 추가
+        const buttons = div.querySelectorAll(".answer-btn");
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                const index = this.getAttribute("data-index");
+                const value = this.getAttribute("data-value");
+                const input = document.getElementById(`q${index}`);
 
-            // 모든 버튼에서 selected 클래스 제거
-            siblingButtons.forEach(btn => btn.classList.remove("selected"));
-            // 클릭된 버튼에 selected 클래스 추가
-            this.classList.add("selected");
-            // hidden input에 값 설정
-            input.value = value;
+                // 같은 질문 내 다른 버튼의 selected 클래스 제거
+                buttons.forEach(btn => btn.classList.remove("selected"));
+                // 현재 버튼에 selected 클래스 추가
+                this.classList.add("selected");
+                // hidden input에 값 설정
+                input.value = value;
+                console.log(`Question ${index + 1} selected: ${value === "0" ? "Yes" : "No"}`);
+            });
         });
     });
 
