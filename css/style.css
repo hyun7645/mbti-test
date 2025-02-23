@@ -1,5 +1,9 @@
 body {
+<<<<<<< Updated upstream
     background-color: #f4f7fa; /* 부드러운 파스텔 블루 */
+=======
+    background-color: #f8f9fa;
+>>>>>>> Stashed changes
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -32,6 +36,7 @@ h1 {
 
 #questions label {
     margin-right: 15px;
+<<<<<<< Updated upstream
     font-size: 1.1em;
 }
 
@@ -50,4 +55,24 @@ h1 {
 
 .text-muted {
     color: #8a8a8a !important;
+=======
+}
+
+#mbti-description {
+    line-height: 1.6;
+}
+
+#mbti-description h5 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+#mbti-description p {
+    margin-bottom: 10px;
+}
+
+#mbti-image {
+    border: 1px solid #ddd;
+    padding: 5px;
+>>>>>>> Stashed changes
 }
