@@ -1,6 +1,6 @@
 body {
     background-color: #f8f9fa;
-    font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 예시 */
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .container {
@@ -13,4 +13,22 @@ body {
 
 #questions label {
     margin-right: 15px;
+}
+
+#mbti-description {
+    line-height: 1.6;
+}
+
+#mbti-description h5 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+#mbti-description p {
+    margin-bottom: 10px;
+}
+
+#mbti-image {
+    border: 1px solid #ddd;
+    padding: 5px;
 }
