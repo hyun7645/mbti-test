@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+// 질문 데이터 (이모티콘 포함)
+>>>>>>> Stashed changes
 const questions = [
     { text: "사람들과 함께 있는 것이 에너지를 준다고 느낀다.", type: "EI" },
     { text: "새로운 사람을 만나는 것이 즐겁다.", type: "EI" },
@@ -76,6 +80,10 @@ function renderQuestions() {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded");
 
+<<<<<<< Updated upstream
+=======
+    // index.html 로직
+>>>>>>> Stashed changes
     const form = document.getElementById("mbti-form");
     if (form) {
         renderQuestions();
