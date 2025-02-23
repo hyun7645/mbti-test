@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-// 질문 데이터 (이모티콘 포함)
 const questions = [
     { text: "사람들과 함께 있는 것이 에너지를 준다고 느낀다. 😊👥", type: "EI" },
     { text: "새로운 사람을 만나는 것이 즐겁다. 🤝✨", type: "EI" },
@@ -35,12 +32,7 @@ const questions = [
     { text: "일을 미리 끝내는 편이다. ✅🏃‍♂️", type: "JP" },
     { text: "자유로운 스케줄을 선호한다. 🌴🎈", type: "JP" },
 ];
-=======
-// 질문 데이터 (생략, 이전과 동일)
-const questions = [ /* 32개 질문 */ ];
->>>>>>> Stashed changes
 
-// 질문 렌더링 함수
 function renderQuestions() {
     const questionsDiv = document.getElementById("questions");
     if (!questionsDiv) {
@@ -67,56 +59,18 @@ function renderQuestions() {
     });
     console.log("Questions rendered successfully!");
 }
-=======
-// 질문 데이터 (생략, 이전과 동일)
-const questions = [ /* 32개 질문 */ ];
->>>>>>> Stashed changes
 
-// DOM 로드 후 실행
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded");
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-    // index.html 로직 (생략, 이전과 동일)
->>>>>>> Stashed changes
-=======
-    // index.html 로직 (생략, 이전과 동일)
->>>>>>> Stashed changes
     const form = document.getElementById("mbti-form");
-    if (!form) {
-        console.error("Form not found!");
-        return;
-    }
+    if (form) {
+        renderQuestions();
 
-    // 질문 렌더링
-    renderQuestions();
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let result = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-    // 폼 제출 처리
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let result = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-
-        questions.forEach((q, index) => {
-            const answer = document.querySelector(`input[name="q${index}"]:checked`);
-            if (answer) {
-                const value = parseInt(answer.value);
-                if (q.type === "EI") value === 0 ? result.E++ : result.I++;
-                if (q.type === "SN") value === 0 ? result.S++ : result.N++;
-                if (q.type === "TF") value === 0 ? result.T++ : result.F++;
-                if (q.type === "JP") value === 0 ? result.J++ : result.P++;
-            }
-        });
-
-        const mbti = `${result.E >= result.I ? "E" : "I"}${result.S >= result.N ? "S" : "N"}${result.T >= result.F ? "T" : "F"}${result.J >= result.P ? "J" : "P"}`;
-        console.log("Calculated MBTI:", mbti);
-        window.location.href = `result.html?type=${mbti}`;
-    });
-
-<<<<<<< Updated upstream
-    // result.html 로직 (생략, 이전과 동일)
-=======
             questions.forEach((q, index) => {
                 const answer = document.querySelector(`input[name="q${index}"]:checked`);
                 if (answer) {
@@ -132,9 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Calculated MBTI:", mbti);
             window.location.href = `result.html?type=${mbti}`;
         });
+    } else {
+        console.error("Form not found!");
     }
 
-    // result.html 로직
     const mbtiTypeElement = document.getElementById("mbti-type");
     const mbtiImageElement = document.getElementById("mbti-image");
     const mbtiDescriptionElement = document.getElementById("mbti-description");
@@ -144,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const mbti = urlParams.get("type") || "Unknown";
         mbtiTypeElement.textContent = mbti;
 
-        // 16가지 MBTI 유형별 상세 설명 및 이미지
         const descriptions = {
             "ISTJ": {
                 text: `
@@ -153,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 꼼꼼함, 조직력, 신뢰성</p>
                     <p><strong>단점:</strong> 융통성 부족, 변화에 대한 저항</p>
                 `,
-                image: "https://images.unsplash.com/photo-1503551723145-6c040742065b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 책상 위 정리된 모습
+                image: "https://images.unsplash.com/photo-1503551723145-6c040742065b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ISFJ": {
                 text: `
@@ -162,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 충성심, 세심함, 실용성</p>
                     <p><strong>단점:</strong> 자기 희생 과다, 변화에 대한 두려움</p>
                 `,
-                image: "https://images.unsplash.com/photo-1513151233558-d860c76eb389?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 따뜻한 느낌의 집
+                image: "https://images.unsplash.com/photo-1513151233558-d860c76eb389?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "INFJ": {
                 text: `
@@ -171,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 공감력, 비전, 헌신</p>
                     <p><strong>단점:</strong> 완벽주의, 감정 과부하</p>
                 `,
-                image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 자연 속 명상
+                image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "INTJ": {
                 text: `
@@ -180,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 분석력, 독창성, 목표 지향</p>
                     <p><strong>단점:</strong> 감정 표현 부족, 고집</p>
                 `,
-                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 전략 회의 모습
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ISTP": {
                 text: `
@@ -189,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 실용성, 적응력, 침착함</p>
                     <p><strong>단점:</strong> 감정 공유 부족, 충동성</p>
                 `,
-                image: "https://images.unsplash.com/photo-1505843490539-513c7928d189?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 공구와 작업
+                image: "https://images.unsplash.com/photo-1505843490539-513c7928d189?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ISFP": {
                 text: `
@@ -198,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 따뜻함, 창의성, 유연성</p>
                     <p><strong>단점:</strong> 갈등 회피, 자기주장 부족</p>
                 `,
-                image: "https://images.unsplash.com/photo-1501785886872-3e2d086b6a9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 예술적 풍경
+                image: "https://images.unsplash.com/photo-1501785886872-3e2d086b6a9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "INFP": {
                 text: `
@@ -207,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 이상주의, 창의력, 진정성</p>
                     <p><strong>단점:</strong> 현실성 부족, 과민 반응</p>
                 `,
-                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 꿈꾸는 풍경
+                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "INTP": {
                 text: `
@@ -216,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 논리력, 창의성, 객관성</p>
                     <p><strong>단점:</strong> 감정 표현 부족, 산만함</p>
                 `,
-                image: "https://images.unsplash.com/photo-1511632765486-a01980e1d76f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 연구실 책상
+                image: "https://images.unsplash.com/photo-1511632765486-a01980e1d76f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ESTP": {
                 text: `
@@ -225,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 대담함, 실시간 대처 능력, 사교성</p>
                     <p><strong>단점:</strong> 충동성, 장기 계획 부족</p>
                 `,
-                image: "https://images.unsplash.com/photo-1502685104226-956e7d4e7d77?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 스포츠 활동
+                image: "https://images.unsplash.com/photo-1502685104226-956e7d4e7d77?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ESFP": {
                 text: `
@@ -234,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 열정, 유머, 친화력</p>
                     <p><strong>단점:</strong> 집중력 부족, 충동적 소비</p>
                 `,
-                image: "https://images.unsplash.com/photo-1517457373958-b7bdd7f8e690?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 파티 장면
+                image: "https://images.unsplash.com/photo-1517457373958-b7bdd7f8e690?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ENFP": {
                 text: `
@@ -243,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 창의력, 열정, 공감력</p>
                     <p><strong>단점:</strong> 산만함, 과도한 낙관주의</p>
                 `,
-                image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 자유로운 해변
+                image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ENTP": {
                 text: `
@@ -252,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 독창성, 적응력, 논쟁 능력</p>
                     <p><strong>단점:</strong> 일관성 부족, 실행력 부족</p>
                 `,
-                image: "https://images.unsplash.com/photo-1517048676734-2d0e0d83e8fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 토론 중인 사람들
+                image: "https://images.unsplash.com/photo-1517048676734-2d0e0d83e8fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ESTJ": {
                 text: `
@@ -261,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 조직력, 결단력, 책임감</p>
                     <p><strong>단점:</strong> 융통성 부족, 감정 무시</p>
                 `,
-                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 팀 회의
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ESFJ": {
                 text: `
@@ -270,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 친화력, 배려심, 실용성</p>
                     <p><strong>단점:</strong> 타인 의존, 비판에 민감</p>
                 `,
-                image: "https://images.unsplash.com/photo-1519125323398-675f398f6978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 가족 모임
+                image: "https://images.unsplash.com/photo-1519125323398-675f398f6978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ENFJ": {
                 text: `
@@ -279,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 리더십, 공감력, 열정</p>
                     <p><strong>단점:</strong> 자기 희생, 과도한 책임감</p>
                 `,
-                image: "https://images.unsplash.com/photo-1511632765486-a01980e1d76f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 강연 중인 사람
+                image: "https://images.unsplash.com/photo-1511632765486-a01980e1d76f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             },
             "ENTJ": {
                 text: `
@@ -288,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>장점:</strong> 리더십, 분석력, 효율성</p>
                     <p><strong>단점:</strong> 타인 감정 무시, 고집</p>
                 `,
-                image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" // 리더의 모습
+                image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
             }
         };
 
@@ -297,8 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mbtiImageElement.src = descriptions[mbti].image;
         } else {
             mbtiDescriptionElement.innerHTML = "<p>해당 유형에 대한 설명이 없습니다.</p>";
-            mbtiImageElement.src = "https://via.placeholder.com/300"; // 기본 이미지
+            mbtiImageElement.src = "https://via.placeholder.com/300";
         }
     }
->>>>>>> Stashed changes
 });
