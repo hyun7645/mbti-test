@@ -47,28 +47,40 @@ function renderQuestions() {
         div.innerHTML = `
             <p class="fw-bold">${index + 1}. ${q.text}</p>
             <input type="hidden" name="q${index}" id="q${index}" value="">
-            <button type="button" class="btn answer-btn btn-yes" data-index="${index}" data-value="0">예</button>
-            <button type="button" class="btn answer-btn btn-no" data-index="${index}" data-value="1">아니오</button>
+            <div class="checkbox-container checkbox-yes">
+                <input type="checkbox" id="yes${index}" name="answer${index}" value="0">
+                <label for="yes${index}">예</label>
+            </div>
+            <div class="checkbox-container checkbox-no">
+                <input type="checkbox" id="no${index}" name="answer${index}" value="1">
+                <label for="no${index}">아니오</label>
+            </div>
         `;
         questionsDiv.appendChild(div);
-    });
 
-    // 모든 버튼에 이벤트 리스너 추가
-    const allButtons = document.querySelectorAll(".answer-btn");
-    allButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const index = this.getAttribute("data-index");
-            const value = this.getAttribute("data-value");
-            const input = document.getElementById(`q${index}`);
-            const questionDiv = this.closest(".question");
-            const buttonsInQuestion = questionDiv.querySelectorAll(".answer-btn");
+        // 체크박스 이벤트 추가
+        const yesCheckbox = document.getElementById(`yes${index}`);
+        const noCheckbox = document.getElementById(`no${index}`);
+        const hiddenInput = document.getElementById(`q${index}`);
 
-            // 같은 질문 내 버튼만 업데이트
-            buttonsInQuestion.forEach(btn => btn.classList.remove("selected"));
-            this.classList.add("selected");
-            input.value = value;
+        yesCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                noCheckbox.checked = false; // "아니오" 체크 해제
+                hiddenInput.value = this.value;
+                console.log(`Question ${index + 1} selected: Yes`);
+            } else {
+                hiddenInput.value = "";
+            }
+        });
 
-            console.log(`Question ${index + 1} selected: ${value === "0" ? "Yes" : "No"}`);
+        noCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                yesCheckbox.checked = false; // "예" 체크 해제
+                hiddenInput.value = this.value;
+                console.log(`Question ${index + 1} selected: No`);
+            } else {
+                hiddenInput.value = "";
+            }
         });
     });
 
