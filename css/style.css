@@ -65,39 +65,49 @@ h1 {
     padding: 5px;
 }
 
-/* 예/아니오 버튼 스타일 */
-.answer-btn {
+/* 체크박스 스타일 */
+.checkbox-container {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none; /* 기본 체크박스 숨김 */
+}
+
+.checkbox-container label {
+    display: inline-block;
     width: 80px;
-    margin-right: 10px;
     padding: 8px;
-    font-size: 1em;
+    text-align: center;
     border-radius: 20px;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.btn-yes {
+.checkbox-container input[type="checkbox"]:checked + label {
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.checkbox-yes label {
     background-color: #b3e5fc;
     border: 1px solid #81d4fa;
     color: #0277bd;
 }
 
-.btn-yes:hover {
+.checkbox-yes input[type="checkbox"]:checked + label {
     background-color: #81d4fa;
     color: #01579b;
 }
 
-.btn-no {
+.checkbox-no label {
     background-color: #ffcdd2;
     border: 1px solid #ef9a9a;
     color: #c62828;
 }
 
-.btn-no:hover {
+.checkbox-no input[type="checkbox"]:checked + label {
     background-color: #ef9a9a;
     color: #b71c1c;
-}
-
-.answer-btn.selected {
-    font-weight: bold;
-    transform: scale(1.1);
 }
