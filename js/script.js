@@ -69,7 +69,7 @@ function renderQuestions() {
                 hiddenInput.value = this.value;
                 console.log(`Question ${index + 1} selected: Yes`);
             } else {
-                hiddenInput.value = "";
+                hiddenInput.value = noCheckbox.checked ? "1" : "";
             }
         });
 
@@ -79,7 +79,7 @@ function renderQuestions() {
                 hiddenInput.value = this.value;
                 console.log(`Question ${index + 1} selected: No`);
             } else {
-                hiddenInput.value = "";
+                hiddenInput.value = yesCheckbox.checked ? "0" : "";
             }
         });
     });
