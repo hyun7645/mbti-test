@@ -1,6 +1,10 @@
 body {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     background-color: #f4f7fa;
+=======
+    background-color: #f4f7fa; /* 부드러운 파스텔 블루 */
+>>>>>>> Stashed changes
 =======
     background-color: #f4f7fa; /* 부드러운 파스텔 블루 */
 >>>>>>> Stashed changes
@@ -77,6 +81,7 @@ h1 {
     border: 1px solid #ddd;
     padding: 5px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 
 /* 예/아니오 버튼 스타일 */
@@ -114,6 +119,8 @@ h1 {
 .answer-btn.selected {
     font-weight: bold;
     transform: scale(1.1);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
