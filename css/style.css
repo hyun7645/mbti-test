@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 예시 */
+}
+
+.container {
+    max-width: 800px;
+}
+
+#questions .question {
+    margin-bottom: 20px;
+}
+
+#questions label {
+    margin-right: 15px;
+}
