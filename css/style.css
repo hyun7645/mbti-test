@@ -1,13 +1,5 @@
 body {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     background-color: #f4f7fa;
-=======
-    background-color: #f4f7fa; /* 부드러운 파스텔 블루 */
->>>>>>> Stashed changes
-=======
-    background-color: #f4f7fa; /* 부드러운 파스텔 블루 */
->>>>>>> Stashed changes
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -35,16 +27,12 @@ h1 {
 }
 
 #questions .fw-bold {
-<<<<<<< Updated upstream
     color: #5a4b7d;
-=======
-    color: #5a4b7d; /* 귀여운 퍼플 */
 }
 
 #questions label {
     margin-right: 15px;
     font-size: 1.1em;
->>>>>>> Stashed changes
 }
 
 .btn-primary {
@@ -80,47 +68,4 @@ h1 {
 #mbti-image {
     border: 1px solid #ddd;
     padding: 5px;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-}
-
-/* 예/아니오 버튼 스타일 */
-.answer-btn {
-    width: 80px;
-    margin-right: 10px;
-    padding: 8px;
-    font-size: 1em;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-}
-
-.btn-yes {
-    background-color: #b3e5fc; /* 부드러운 블루 */
-    border: 1px solid #81d4fa;
-    color: #0277bd;
-}
-
-.btn-yes:hover {
-    background-color: #81d4fa;
-    color: #01579b;
-}
-
-.btn-no {
-    background-color: #ffcdd2; /* 부드러운 핑크 */
-    border: 1px solid #ef9a9a;
-    color: #c62828;
-}
-
-.btn-no:hover {
-    background-color: #ef9a9a;
-    color: #b71c1c;
-}
-
-.answer-btn.selected {
-    font-weight: bold;
-    transform: scale(1.1);
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
