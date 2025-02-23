@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // 질문 데이터 (이모티콘 포함)
 const questions = [
     { text: "사람들과 함께 있는 것이 에너지를 준다고 느낀다. 😊👥", type: "EI" },
@@ -66,12 +67,20 @@ function renderQuestions() {
     });
     console.log("Questions rendered successfully!");
 }
+=======
+// 질문 데이터 (생략, 이전과 동일)
+const questions = [ /* 32개 질문 */ ];
+>>>>>>> Stashed changes
 
 // DOM 로드 후 실행
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded");
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    // index.html 로직 (생략, 이전과 동일)
+>>>>>>> Stashed changes
 =======
     // index.html 로직 (생략, 이전과 동일)
 >>>>>>> Stashed changes
