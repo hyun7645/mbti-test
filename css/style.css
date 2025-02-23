@@ -76,7 +76,7 @@ h1 {
 }
 
 .btn-yes {
-    background-color: #b3e5fc; /* 부드러운 블루 */
+    background-color: #b3e5fc;
     border: 1px solid #81d4fa;
     color: #0277bd;
 }
@@ -87,7 +87,7 @@ h1 {
 }
 
 .btn-no {
-    background-color: #ffcdd2; /* 부드러운 핑크 */
+    background-color: #ffcdd2;
     border: 1px solid #ef9a9a;
     color: #c62828;
 }
